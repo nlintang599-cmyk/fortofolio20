@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lintang Nur Anggraeni | Portofolio</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    :root {
+      --bg-color: #f0f7ff;
+      --text-color: #1c1c1c;
+      --card-bg: #ffffff;
+      --accent: #3b82f6; /* biru utama */
+      --accent-hover: #2563eb; /* biru lebih tua */
+      --gradient: linear-gradient(135deg, #3b82f6, #60a5fa);
+    }
+
+    body.dark {
+      --bg-color: #0f172a;
+      --text-color: #e2e8f0;
+      --card-bg: #1e293b;
+      --accent: #60a5fa;
+      --accent-hover: #3b82f6;
+      --gradient: linear-gradient(135deg, #1e3a8a, #2563eb);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.7;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--gradient);
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+      position: relative;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: background 0.5s ease;
+    }
+
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      margin-bottom: 0.3rem;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+
+    /* Tombol Tema */
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s, border 0.3s;
+      font-weight: 600;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255,255,255,0.35);
+      border-color: #fff;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      animation: fadeIn 1s ease;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, background 0.5s ease;
+      animation: slideUp 1s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      text-align: justify;
+    }
+
+    .hobi ul, .favorit ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+
+    .hobi li, .favorit li {
+      background: rgba(59,130,246,0.1);
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      color: var(--text-color);
+      transition: background 0.3s;
+    }
+
+    .hobi li:hover, .favorit li:hover {
+      background: rgba(59,130,246,0.2);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 0.4rem;
+      text-decoration: none;
+      color: white;
+      background: var(--accent);
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .contact a:hover {
+      background: var(--accent-hover);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      opacity: 0.7;
+      background: var(--card-bg);
+      border-top: 1px solid #eee;
+      transition: background 0.5s ease;
+    }
+
+    /* Animasi */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <button class="theme-toggle" id="theme-toggle">🌙 Mode Gelap</button>
+
+    <!-- Ganti foto.jpg dengan fotomu -->
+    <img src="intan.jpg" alt="Foto Profil Lintang Nur Anggraeni" />
+    <h1>Lintang Nur Anggraeni</h1>
+    <p>Mahasiswa Teknik Informatika | Universitas Sultan Fatah Demak</p>
+  </header>
+
+  <section>
+    <div class="card about">
+      <h2>Tentang Saya</h2>
+      <p>
+        Halo! Saya <strong>Lintang Nur Anggraeni</strong>, biasa dipanggil <strong>Intan</strong>. 
+        Saya lahir di <strong>Demak</strong> pada bulan Oktober 2004, dan baru saja berusia 21 tahun 🎉. 
+        Saya lulus SMA pada tahun 2023 dan sekarang menempuh studi di 
+        <strong>Universitas Sultan Fatah Demak</strong> jurusan <strong>Teknik Informatika</strong> semester 5.
+      </p>
+      <p>
+        Saya pernah tinggal di <strong>Bogor</strong> selama 10 tahun sebelum kembali ke Demak tahun 2015 
+        mengikuti orang tua pindah tugas. Saya orangnya ceria, suka tantangan, dan gemar hal-hal baru 
+        yang memperluas pengalaman hidup. Terima kasih sudah berkunjung! 💙
+      </p>
+    </div>
+
+    <div class="card hobi">
+      <h2>Hobi</h2>
+      <ul>
+        <li>🎤 Menyanyi dan tampil di acara kampus</li>
+        <li>🏞️ Travelling dan healing ke pegunungan & pantai</li>
+        <li>📸 Berfoto dan membuat konten seru bersama teman-teman</li>
+      </ul>
+    </div>
+
+    <div class="card favorit">
+      <h2>Favorit Saya</h2>
+      <ul>
+        <li>🍈 Buah favorit: Durian, Nangka, Mangga</li>
+        <li>🌤️ Suasana: Pagi cerah & udara sejuk pegunungan</li>
+        <li>🎶 Musik: Lagu akustik & pop Indonesia</li>
+      </ul>
+    </div>
+
+    <div class="card contact">
+      <h3>Hubungi Saya</h3>
+      <a href="mailto:lintangn.a204@gmail.com">✉️ Email</a>
+      <a href="https://wa.me/6281328712402" target="_blank">💬 WhatsApp</a>
+      <a href="https://instagram.com/lintangnur_001" target="_blank">📸 Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Lintang Nur Anggraeni | Dibuat dengan 💙 oleh Intan
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      toggleBtn.textContent = body.classList.contains('dark') ? '☀️ Mode Terang' : '🌙 Mode Gelap';
+    });
+  </script>
+</body>
+</html>
